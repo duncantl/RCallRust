@@ -1,0 +1,22 @@
+
+This is a very simple example of calling Rust routines from R.
+This uses the Rffi package to call the routines directly without
+the need for a wrapper routine. We could use Dan Adler's rdyncall package
+also.
+
+I've also added an example of using .C.
+
+``` shell
+make
+```
+
+In R
+``` R
+source("call.R", verbose = TRUE)
+```
+
+Currently, this doesn't show how to active the Rust run-time system.
+
+
+There is a related SO thread:
+http://stackoverflow.com/questions/28901036/what-are-the-steps-necessary-to-pass-r-objects-to-a-rust-program
