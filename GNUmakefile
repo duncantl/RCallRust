@@ -18,3 +18,8 @@ clean:
 	rm librustRoutines.dylib
 
 
+libfoo.a: lib.rs
+	$(RUSTC) --crate-type staticlib --crate-name foo lib.rs
+
+wrapper.so: wrapper.o libfoo.a
+	(export PKG_LIBS="-L. -lfoo" ; R CMD SHLIB -o $@ wrapper.o)
