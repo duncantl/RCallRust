@@ -16,6 +16,9 @@ start rust as the primary application, and then pass control back to
 R's REPL. This is complicated with different R front-ends, e.g.,
 R.app, Rgui.exe, RStudio, etc.
 
+Hopefully, Rust's run-time will become embeddable. It was mentioned in 2013.
+http://brson.github.io/2013/03/10/embedding-rust-in-ruby/
+
 
 ``` shell
 make
