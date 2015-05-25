@@ -1,0 +1,9 @@
+Package: RustInRPkg
+Version: 0.1-0
+Author: Duncan Temple Lang
+Maintainer: DTL <duncan@r-project.org>
+Title: Illustrating calling Rust routines from R.
+Description:  This does not (yet) handle Rust run-time  facilities.
+  So we can only use Rust as an alternative to C for compiling routines.
+  Perhaps more on this soon.
+License: BSD_3_clause

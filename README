@@ -1,10 +1,12 @@
+See  RustInRPkg for an example of arranging things as a C routine calling Rust routines
+in a library.
 
 This is a very simple example of calling Rust routines from R.
 This uses the Rffi package to call the routines directly without
 the need for a wrapper routine. We could use Dan Adler's rdyncall package
 also.
 
-I've also added an example of using .C.
+I've also added an example of using .C() and .Call().
 
 This approach doesn't really allow us to use Rust's run-time facilities,
 just to compile routines that we can call.
@@ -20,6 +22,13 @@ source("call.R", verbose = TRUE)
 ```
 
 Currently, this doesn't show how to active the Rust run-time system.
+
+
+A different approach that we implement is to 
+  write the wrappers in C
+  compile the rust code as a library
+  link the compiled C code and rust static library
+  invoke as usual.
 
 
 There is a related SO thread:

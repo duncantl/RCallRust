@@ -1,0 +1,11 @@
+
+include $(R_HOME)/etc/Makeconf
+
+RustInRPkg$(SHLIB_EXT) : librustRoutines.a wrapper.o
+	$(R_HOME)/bin/R CMD SHLIB -o $@ wrapper.o
+
+PKG_LIBS=-L. -lrustRoutines
+RUSTC=rustc
+
+librustRoutines.a: lib.rs
+	$(RUSTC) --crate-type staticlib --crate-name rustRoutines lib.rs

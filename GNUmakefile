@@ -18,6 +18,9 @@ clean:
 	rm librustRoutines.dylib
 
 
+wrapper.o: wrapper.c
+	(export PKG_CPPFLAGS=-I$(R_HOME)/include ; R CMD COMPILE wrapper.c)
+
 libfoo.a: lib.rs
 	$(RUSTC) --crate-type staticlib --crate-name foo lib.rs
 
