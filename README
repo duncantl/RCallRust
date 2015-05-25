@@ -6,6 +6,10 @@ also.
 
 I've also added an example of using .C.
 
+This approach doesn't really allow us to use Rust's run-time facilities,
+just to compile routines that we can call.
+
+
 ``` shell
 make
 ```

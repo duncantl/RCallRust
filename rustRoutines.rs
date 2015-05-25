@@ -1,3 +1,6 @@
+//  use core::libc::c_uint;
+
+
 #![crate_type = "dylib"]
 
 
@@ -10,6 +13,9 @@ pub extern fn bob(val: f64) -> f64 {
 pub extern fn jane(val: i32) -> i32 {
   return val* 10
 }
+
+
+// Could use #[allow(non_snake_case)] to allow Rf_jane
 
 #[no_mangle]
 pub unsafe extern fn rf_jane(val: *mut i32)  {

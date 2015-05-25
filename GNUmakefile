@@ -10,7 +10,9 @@ librustRoutines.dylib: rustRoutines.rs
 	$(RUSTC) --emit obj $< -o $@
 
 RcallRust.so: wrapper.o rustRoutines.o
-	R CMD SHLIB -o $@ $^
+	(export PKG_LIBS="-lrustc_driver-4e7c5e5c -lrustc-4e7c5e5c /usr/local/lib/rustlib/i686-apple-darwin/lib/libcore-4e7c5e5c.rlib"; R CMD SHLIB -o $@ $^)
+
+#	$(RUSTC) -o $@ $^
 
 clean:
 	rm librustRoutines.dylib
