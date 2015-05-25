@@ -11,6 +11,11 @@ I've also added an example of using .C() and .Call().
 This approach doesn't really allow us to use Rust's run-time facilities,
 just to compile routines that we can call.
 
+For using Rust's run-time, it may be "necessary" to embed R within R,
+start rust as the primary application, and then pass control back to
+R's REPL. This is complicated with different R front-ends, e.g.,
+R.app, Rgui.exe, RStudio, etc.
+
 
 ``` shell
 make
