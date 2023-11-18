@@ -1,4 +1,4 @@
-
+#if 0
 int jane(int);
 
 void
@@ -18,4 +18,14 @@ Rf_bob(SEXP r_val)
     double val;
     val = bob(REAL(r_val)[0]);
     return(ScalarReal(val));
+}
+
+#endif
+
+extern void process();
+
+void
+R_process()
+{
+    process();
 }
