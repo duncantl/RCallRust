@@ -26,3 +26,7 @@ libfoo.a: lib.rs
 
 wrapper.so: wrapper.o libfoo.a
 	(export PKG_LIBS="-L. -lfoo" ; R CMD SHLIB -o $@ wrapper.o)
+
+
+threads.dylib:
+	$(RUSTC) --crate-type dylib --crate-name threads threads.rs
